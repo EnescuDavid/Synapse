@@ -26,6 +26,8 @@ adapts to your mistakes, and picks up exactly where you left off.
 
 ```
 /plugin marketplace add EnescuDavid/Synapse
+```
+```
 /plugin install synapse@synapse
 ```
 
@@ -76,6 +78,8 @@ Once Claude Code is running:
 
 ```
 /plugin marketplace add EnescuDavid/Synapse
+```
+```
 /plugin install synapse@synapse
 ```
 
