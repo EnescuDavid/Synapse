@@ -10,7 +10,10 @@
   "plugins": [
     {
       "name": "synapse",
-      "source": ".",
+      "source": {
+        "source": "github",
+        "repo": "EnescuDavid/Synapse"
+      },
       "description": "Turn any directory into a structured learning environment. Builds personalized curricula, teaches with spaced repetition (FSRS-5), and adapts to how you learn.",
       "version": "0.1.0",
       "author": {
