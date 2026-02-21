@@ -24,10 +24,9 @@ adapts to your mistakes, and picks up exactly where you left off.
 
 ## Install
 
-If you already have Claude Code running:
-
 ```
-/install-plugin davidenescu/synapse
+/plugin marketplace add EnescuDavid/Synapse
+/plugin install synapse@synapse
 ```
 
 ## Quick Start
@@ -76,7 +75,8 @@ On first launch, Claude Code will walk you through signing in with your Anthropi
 Once Claude Code is running:
 
 ```
-/install-plugin davidenescu/synapse
+/plugin marketplace add EnescuDavid/Synapse
+/plugin install synapse@synapse
 ```
 
 ### 4. Start learning

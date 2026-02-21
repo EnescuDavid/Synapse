@@ -1,0 +1,24 @@
+{
+  "name": "synapse",
+  "owner": {
+    "name": "David Enescu"
+  },
+  "metadata": {
+    "description": "Personal learning tutor plugin for Claude Code",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "synapse",
+      "source": ".",
+      "description": "Turn any directory into a structured learning environment. Builds personalized curricula, teaches with spaced repetition (FSRS-5), and adapts to how you learn.",
+      "version": "0.1.0",
+      "author": {
+        "name": "David Enescu"
+      },
+      "repository": "https://github.com/EnescuDavid/Synapse",
+      "license": "MIT",
+      "keywords": ["learning", "education", "spaced-repetition", "tutoring", "curriculum", "fsrs"]
+    }
+  ]
+}

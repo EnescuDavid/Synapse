@@ -4,9 +4,9 @@
   "description": "Turn any directory into a structured learning environment. Synapse builds personalized curricula, teaches with spaced repetition, and adapts to how you learn.",
   "author": {
     "name": "David Enescu",
-    "url": "https://github.com/davidenescu"
+    "url": "https://github.com/EnescuDavid"
   },
-  "repository": "https://github.com/davidenescu/synapse",
+  "repository": "https://github.com/EnescuDavid/Synapse",
   "license": "MIT",
   "keywords": ["learning", "education", "spaced-repetition", "tutoring", "curriculum", "fsrs"]
 }
