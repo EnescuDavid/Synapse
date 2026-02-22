@@ -45,6 +45,13 @@ When the SessionStart hook has loaded context (indicated by `[SYNAPSE SESSION CO
 node ${CLAUDE_PLUGIN_ROOT}/scripts/fsrs/fsrs-helper.js <command> <args>
 ```
 
+**Chess helper** (always call via Bash, never require/import directly):
+```bash
+node ${CLAUDE_PLUGIN_ROOT}/scripts/chess/chess-helper.js <command> <args>
+```
+Commands: `validate --fen`, `url --fen`, `open --fen`, `board --fen`, `position --white --black`
+Use `position` to construct FEN from piece lists instead of writing FEN strings directly.
+
 ### Mid-Session Checkpoints
 
 After every 2-3 exercises, write `.learning/session-handoff.json` with:

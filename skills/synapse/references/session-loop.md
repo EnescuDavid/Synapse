@@ -48,6 +48,7 @@ Repeats for each item in the session plan:
 - If learner asks "why?" or "I don't understand" → explain more
 - If learner says "too easy" → skip ahead, bump difficulty
 - If learner says "too hard" → hint, simplify
+- **Chess play-and-report**: For Apply+ chess exercises, open the position on Lichess (`chess-helper.js open`), then wait for the learner to report their moves in algebraic notation. Evaluate the reported move sequence — do not ask the learner to paste PGN or FEN back.
 
 ### 3. EVALUATE
 - Check correctness per adapter's assessment rules
