@@ -58,7 +58,7 @@ Repeats for each item in the session plan:
   - **3 (Good)**: correct with reasonable effort, maybe 1 small hint
   - **4 (Easy)**: instant correct, no hesitation
 - Detect misconceptions (same error 2+ times → flag as pattern)
-- Call FSRS helper: `<runtime> <plugin_root>/scripts/fsrs/fsrs-helper.<ext> review --card <json> --rating <grade>`
+- Call FSRS helper via Bash (never require/import directly): `node ${CLAUDE_PLUGIN_ROOT}/scripts/fsrs/fsrs-helper.js review --card '<json>' --rating <grade>`
 - Update `.learning/state.json` with new card data
 
 ### 4a. REINFORCE (correct/partial)

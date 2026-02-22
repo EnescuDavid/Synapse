@@ -47,16 +47,28 @@ Grade 2 (Hard) means the learner **DID recall** but struggled. If they **couldn'
 
 ## How to Call the FSRS Helper
 
-After grading, call:
+**IMPORTANT**: Always call the FSRS helper as a CLI command via Bash. Do NOT require/import the JS or Python files directly — they are CLI scripts, not libraries.
+
+First detect the runtime:
+```bash
+bash ${CLAUDE_PLUGIN_ROOT}/scripts/setup/detect-runtime.sh
 ```
-<runtime> ${CLAUDE_PLUGIN_ROOT}/scripts/fsrs/fsrs-helper.<ext> review --card '<card_json>' --rating <grade>
+This returns `node`, `python3`, `python`, or `none`. Use the result to pick the right script.
+
+After grading, call via Bash:
+```bash
+# If runtime is "node":
+node ${CLAUDE_PLUGIN_ROOT}/scripts/fsrs/fsrs-helper.js review --card '<card_json>' --rating <grade>
+
+# If runtime is "python3":
+python3 ${CLAUDE_PLUGIN_ROOT}/scripts/fsrs/fsrs-helper.py review --card '<card_json>' --rating <grade>
 ```
 
-The helper returns updated card state + next review date. Update `state.json` with the result.
+The helper returns updated card state + next review date as JSON. Update `state.json` with the result.
 
 For building the review queue at session start:
-```
-<runtime> ${CLAUDE_PLUGIN_ROOT}/scripts/fsrs/fsrs-helper.<ext> queue --state .learning/state.json
+```bash
+node ${CLAUDE_PLUGIN_ROOT}/scripts/fsrs/fsrs-helper.js queue --state .learning/state.json
 ```
 
 ## Mastery State Mapping

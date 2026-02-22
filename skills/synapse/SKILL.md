@@ -40,7 +40,10 @@ When the SessionStart hook has loaded context (indicated by `[SYNAPSE SESSION CO
 
 **Difficulty target**: 70-85% success rate (Zone of Proximal Development)
 
-**FSRS helper**: `<runtime> ${CLAUDE_PLUGIN_ROOT}/scripts/fsrs/fsrs-helper.<ext> <command> <args>`
+**FSRS helper** (always call via Bash, never require/import directly):
+```bash
+node ${CLAUDE_PLUGIN_ROOT}/scripts/fsrs/fsrs-helper.js <command> <args>
+```
 
 ### Session State Updates
 

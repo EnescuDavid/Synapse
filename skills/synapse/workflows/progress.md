@@ -59,7 +59,7 @@ Next session: Review [concepts] + New: [concept]
 
 ### Review Load
 - Read `.learning/review-queue.json` for due counts
-- If file is stale, regenerate: `<runtime> ${CLAUDE_PLUGIN_ROOT}/scripts/fsrs/fsrs-helper.<ext> queue --state .learning/state.json`
+- If file is stale, regenerate via Bash: `node ${CLAUDE_PLUGIN_ROOT}/scripts/fsrs/fsrs-helper.js queue --state .learning/state.json`
 
 ## Tone
 Informational. Clean, scannable. Only add commentary if something is notable (long streak, struggling area, milestone approaching).
