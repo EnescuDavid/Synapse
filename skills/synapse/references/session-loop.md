@@ -120,12 +120,36 @@ Store `interleaving_explained: true` in state.json after explaining.
    Coming up next:
      [Next concepts] | [N] items due for review [when]
    ```
-3. **Update state files**:
-   - `.learning/state.json`: FSRS cards, Bloom's levels, mastery states, streak, sessions_completed
-   - `progress.md`: append session entry
-   - `.learning/review-queue.json`: regenerate via FSRS helper queue command
-   - `.learning/session-history.json`: append raw session data
-4. **Clean up**: delete `session-handoff.json` if exists
+3. **Update all state files in one call** via Bash:
+   ```bash
+   node ${CLAUDE_PLUGIN_ROOT}/scripts/session/session-close.js --results '<json>'
+   ```
+   This single script handles everything: state.json, progress.md, review-queue.json, session-history.json, and handoff cleanup. See the script header for the JSON schema.
+
+   Example results JSON:
+   ```json
+   {
+     "date": "2026-02-22",
+     "duration_min": 20,
+     "concepts": [
+       {
+         "id": "piece-values",
+         "is_new": true,
+         "grades": [3, 4],
+         "bloom_level": "understand",
+         "misconceptions": [],
+         "note": "Strong grasp of relative values"
+       }
+     ],
+     "observations": "Good first session, chess culture knowledge helps.",
+     "unlocked": ["board-vision", "endgame-basics"]
+   }
+   ```
+
+   For large results, write to a temp file and use `--results-file`:
+   ```bash
+   node ${CLAUDE_PLUGIN_ROOT}/scripts/session/session-close.js --results-file /tmp/synapse-results.json
+   ```
 
 ## Frustration Detection
 

@@ -45,17 +45,18 @@ When the SessionStart hook has loaded context (indicated by `[SYNAPSE SESSION CO
 node ${CLAUDE_PLUGIN_ROOT}/scripts/fsrs/fsrs-helper.js <command> <args>
 ```
 
-### Session State Updates
+### Mid-Session Checkpoints
 
 After every 2-3 exercises, write `.learning/session-handoff.json` with:
 - exercises_completed, session_plan_remaining, running_success_rate, observations
 
-At session end:
-- Update `.learning/state.json` (cards, streak, sessions_completed)
-- Append to `progress.md`
-- Regenerate `.learning/review-queue.json` via FSRS helper queue
-- Append to `.learning/session-history.json`
-- Delete `session-handoff.json`
+### Session Close (one call)
+
+At session end, call the session-close script via Bash with session results as JSON. This handles ALL file updates deterministically in one step:
+```bash
+node ${CLAUDE_PLUGIN_ROOT}/scripts/session/session-close.js --results '<json>'
+```
+See `references/session-loop.md` for the JSON schema and examples. Do NOT manually edit state.json, progress.md, review-queue.json, or session-history.json at session end.
 
 ## Runtime Detection
 
